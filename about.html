@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyBlogsHub · about us</title>
+  <link rel="stylesheet" href="about-style.css">
+</head>
+<body class="light-theme">
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo">MyBlogsHub</div>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Sign Up</a></li>
+          <li><button class="theme-toggle" id="themeToggle">Dark</button></li>
+        </ul>
+      </nav>
+      <div class="mobile-toggle" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <h1>ABOUT US</h1>
+        <p class="about-description">
+          MyBlogsHub – this is a space that unites the creativity of the past and the present. 
+          We have our own collection of articles, ideas, and stories, gathered from all over the world. 
+          We also offer a clean, modern platform where you can share your own blog and connect with readers.
+        </p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">670</span>
+            <h3>CATEGORIES IN THE COLLECTION</h3>
+            <p class="stat-detail">
+              The world's largest collection of blog categories. 
+              To date, the number of articles across all topics is <strong>33,000+</strong> 
+              from more than <strong>132 countries</strong> and covering <strong>12 centuries</strong> 
+              of human knowledge.
+            </p>
+            <p class="stat-note">
+              You can read, learn, and contribute your own stories with us.
+            </p>
+          </div>
+
+          <div class="stat-card spacious-card">
+            <span class="stat-number">133 345</span>
+            <span class="stat-unit">M²</span>
+            <h3>SPACIOUS HALLS FOR YOUR RELAXATION AND ENJOYMENT</h3>
+            <p class="stat-detail">
+              Our interface is built with clean lines, generous whitespace, and a calm reading environment. 
+              Thousands of hours of comfortable blogging and exploring await you.
+            </p>
+          </div>
+        </div>
+
+        <div class="stat-mini-row">
+          <div class="mini-item"><span>33k+</span> articles</div>
+          <div class="mini-item"><span>132+</span> countries</div>
+          <div class="mini-item"><span>12</span> centuries</div>
+          <div class="mini-item"><span>670</span> categories</div>
+        </div>
+      </div>
+    </section>
+    <hr class="separator">
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-nav">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#" class="lang">En</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Subscribe to our newsletter</h4>
+        <form class="newsletter-form" id="newsletterForm">
+          <label for="email" class="visually-hidden">What's your email?</label>
+          <input type="email" id="email" name="email" placeholder="What's your email?" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="form-feedback" id="formFeedback"></p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>We work</h4>
+        <p>from 8:00 to 21:00</p>
+        <p class="phone">+37529 555 44 32</p>
+        <p class="copyright">© 2025 MyBlogsHub · free expression</p>
+        <p class="domain">myblogshub.github.io</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="about-script.js"></script>
+</body>
+</html>
