@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyBlogsHub – login</title>
+  <link rel="stylesheet" href="login-style.css">
+</head>
+<body class="light-theme">
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo">MyBlogsHub</div>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="login.html" class="active">Login</a></li>
+          <li><a href="register.html">Sign Up</a></li>
+          <li><button class="theme-toggle" id="themeToggle">Dark</button></li>
+        </ul>
+      </nav>
+      <div class="mobile-toggle" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="login-main">
+    <div class="container login-container">
+      <div class="login-card">
+        <h2>Welcome back</h2>
+        <p class="login-sub">Log in to access your dashboard</p>
+
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="login-btn">Log in</button>
+          <p class="form-footer">
+            <a href="#">Forgot password?</a> · <a href="register.html">Create account</a>
+          </p>
+        </form>
+
+        <div id="loginMessage" class="login-message"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2025 MyBlogsHub — simple, useful, human.</p>
+      <p class="domain">myblogshub.github.io</p>
+    </div>
+  </footer>
+
+  <script src="login-script.js"></script>
+</body>
+</html>
