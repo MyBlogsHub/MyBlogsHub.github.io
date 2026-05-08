@@ -3,116 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyBlogsHub · about us</title>
-  <link rel="stylesheet" href="about-style.css">
+  <title>MyBlogsHub – All Journals</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="blogs_style.css">
 </head>
 <body class="light-theme">
-  <header class="site-header">
-    <div class="container header-flex">
-      <div class="logo">MyBlogsHub</div>
-      <nav class="navbar">
-        <ul class="nav-list">
+  <header id="mainHeader">
+    <div class="nav-wrap" id="navWrap">
+      <a href="index.html" class="logo">MyBlogsHub</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">Blogs</a></li>
+          <li class="dropdown-parent">
+            <a href="#" class="dropdown-toggle" onclick="event.preventDefault()">Journal <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="blogs.html?category=all" class="all-cat">All Categories</a></li>
+              <li><a href="blogs.html?category=technology">Technology</a></li>
+              <li><a href="blogs.html?category=lifestyle">Lifestyle</a></li>
+              <li><a href="blogs.html?category=design">Design</a></li>
+              <li><a href="blogs.html?category=culture">Culture</a></li>
+              <li><a href="blogs.html?category=productivity">Productivity</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-parent">
+            <a href="#" class="dropdown-toggle" onclick="event.preventDefault()">Podcasts <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="podcasts.html?category=all" class="all-cat">All Categories</a></li>
+              <li><a href="podcasts.html?category=technology">Technology</a></li>
+              <li><a href="podcasts.html?category=lifestyle">Lifestyle</a></li>
+              <li><a href="podcasts.html?category=design">Design</a></li>
+              <li><a href="podcasts.html?category=culture">Culture</a></li>
+              <li><a href="podcasts.html?category=productivity">Productivity</a></li>
+            </ul>
+          </li>
           <li><a href="#">Categories</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Sign Up</a></li>
-          <li><button class="theme-toggle" id="themeToggle">Dark</button></li>
+          <li><a href="#">Archives</a></li>
+          <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-adjust"></i></button></li>
+          <li><a href="join-hub.html" class="join-hub-btn">Join Hub</a></li>
         </ul>
+        <button class="hamburger-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
       </nav>
-      <div class="mobile-toggle" id="mobileToggle">
-        <span></span><span></span><span></span>
-      </div>
     </div>
   </header>
 
+  <div id="closeBtn" onclick="toggleMenu()">&times;</div>
+
   <main>
-    <section class="about-hero">
-      <div class="container">
-        <h1>ABOUT US</h1>
-        <p class="about-description">
-          MyBlogsHub – this is a space that unites the creativity of the past and the present. 
-          We have our own collection of articles, ideas, and stories, gathered from all over the world. 
-          We also offer a clean, modern platform where you can share your own blog and connect with readers.
-        </p>
+    <div class="container">
+      <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      <div class="blogs-header">
+        <h2>All Journals</h2>
+        <p>Explore our complete collection of thought-provoking articles.</p>
       </div>
-    </section>
-
-    <section class="stats">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-card">
-            <span class="stat-number">670</span>
-            <h3>CATEGORIES IN THE COLLECTION</h3>
-            <p class="stat-detail">
-              The world's largest collection of blog categories. 
-              To date, the number of articles across all topics is <strong>33,000+</strong> 
-              from more than <strong>132 countries</strong> and covering <strong>12 centuries</strong> 
-              of human knowledge.
-            </p>
-            <p class="stat-note">
-              You can read, learn, and contribute your own stories with us.
-            </p>
-          </div>
-
-          <div class="stat-card spacious-card">
-            <span class="stat-number">133 345</span>
-            <span class="stat-unit">M²</span>
-            <h3>SPACIOUS HALLS FOR YOUR RELAXATION AND ENJOYMENT</h3>
-            <p class="stat-detail">
-              Our interface is built with clean lines, generous whitespace, and a calm reading environment. 
-              Thousands of hours of comfortable blogging and exploring await you.
-            </p>
-          </div>
-        </div>
-
-        <div class="stat-mini-row">
-          <div class="mini-item"><span>33k+</span> articles</div>
-          <div class="mini-item"><span>132+</span> countries</div>
-          <div class="mini-item"><span>12</span> centuries</div>
-          <div class="mini-item"><span>670</span> categories</div>
+      <div class="search-wrap">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="blogSearch" placeholder="Search journals..." oninput="filterBlogs()">
         </div>
       </div>
-    </section>
-    <hr class="separator">
+      <div class="cat-filters" id="catFilters">
+        <a href="index.html" class="cat-pill all-pill">All</a>
+        <button class="cat-pill" data-cat="technology" onclick="setCategory('technology')">Technology</button>
+        <button class="cat-pill" data-cat="lifestyle" onclick="setCategory('lifestyle')">Lifestyle</button>
+        <button class="cat-pill" data-cat="design" onclick="setCategory('design')">Design</button>
+        <button class="cat-pill" data-cat="culture" onclick="setCategory('culture')">Culture</button>
+        <button class="cat-pill" data-cat="productivity" onclick="setCategory('productivity')">Productivity</button>
+      </div>
+      <div class="blogs-grid" id="blogsGrid"></div>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-nav">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Categories</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#" class="lang">En</a></li>
-        </ul>
+  <footer class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <div class="footer-logo">MyBlogsHub</div>
+        <p>A sanctuary for thoughtful storytelling.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
       </div>
-
-      <div class="footer-newsletter">
-        <h4>Subscribe to our newsletter</h4>
-        <form class="newsletter-form" id="newsletterForm">
-          <label for="email" class="visually-hidden">What's your email?</label>
-          <input type="email" id="email" name="email" placeholder="What's your email?" required>
-          <button type="submit">Subscribe</button>
-        </form>
-        <p class="form-feedback" id="formFeedback"></p>
-      </div>
-
-      <div class="footer-contact">
-        <h4>We work</h4>
-        <p>from 8:00 to 21:00</p>
-        <p class="phone">+37529 555 44 32</p>
-        <p class="copyright">© 2025 MyBlogsHub · free expression</p>
-        <p class="domain">myblogshub.github.io</p>
-      </div>
+      <div class="footer-col"><h4>Journal</h4><ul class="footer-links"><li><a href="blogs.html?category=all">Latest</a></li><li><a href="blogs.html?category=all">Popular</a></li><li><a href="blogs.html?category=all">Editors' Pick</a></li><li><a href="blogs.html?category=all">Archive</a></li></ul></div>
+      <div class="footer-col"><h4>Categories</h4><ul class="footer-links"><li><a href="blogs.html?category=technology">Technology</a></li><li><a href="blogs.html?category=lifestyle">Lifestyle</a></li><li><a href="blogs.html?category=design">Design</a></li><li><a href="blogs.html?category=culture">Culture</a></li></ul></div>
+      <div class="footer-col"><h4>Stay Inspired</h4><form class="newsletter-form" onsubmit="event.preventDefault();alert('Subscribed!');"><input type="email" placeholder="Your email"><button type="submit">Subscribe</button></form></div>
     </div>
+    <div class="footer-bottom"><span>&copy; 2025 MyBlogsHub Journal. All rights reserved.</span><div><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></div></div>
   </footer>
 
-  <script src="about-script.js"></script>
+  <script src="blogs_script.js"></script>
 </body>
-</html>
+  </html>
